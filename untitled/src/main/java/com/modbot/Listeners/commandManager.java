@@ -6,13 +6,7 @@ import com.modbot.Commands.bot.botinfoCommand;
 import com.modbot.Commands.bot.pingCommand;
 import com.modbot.Commands.bot.shardsCommand;
 
-import com.modbot.Commands.discord.inviteCommand;
-
-import com.modbot.Commands.discord.servericonCommand;
-
-import com.modbot.Commands.discord.serverinfoCommand;
-
-import com.modbot.Commands.discord.userinfoCommand;
+import com.modbot.Commands.discord.*;
 
 import com.modbot.Commands.fun.cancelledCommand;
 
@@ -53,6 +47,7 @@ public class commandManager extends ListenerAdapter {
         List<CommandData> commandData = new ArrayList<>();
         event.getJDA().addEventListener(
                 new pingCommand(),
+                new avatarCommand(),
                 new helpCommand(),
                 new botinfoCommand(),
                 new serverinfoCommand(),
@@ -88,7 +83,8 @@ public class commandManager extends ListenerAdapter {
                 new punchCommand(),
                 new triggeredCommand(),
                 new blushCommand(),
-                new slapCommand()
+                new slapCommand(),
+                new channelInfoCommand()
         );
 
 
@@ -122,7 +118,9 @@ public class commandManager extends ListenerAdapter {
         //Discord commands
         commandData.add(Commands.slash("serverinfo", "ΓDiscord⅃ server informations"));
         commandData.add(Commands.slash("userinfo", "ΓDiscord⅃ Get the user info").addOptions(optionUser));
+        commandData.add(Commands.slash("avatar", "ΓDiscord⅃ Get the user avatar").addOptions(optionUser));
         commandData.add(Commands.slash("servericon", "ΓDiscord⅃ Get the server icon"));
+        commandData.add(Commands.slash("channel_info", "ΓDiscord⅃ Get information about some channel").addOptions(optionChannel));
 
 
 

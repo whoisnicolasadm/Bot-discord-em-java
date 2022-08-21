@@ -18,6 +18,7 @@ public class userinfoCommand extends ListenerAdapter {
             String user = null;
             String userTag = null;
             String userID = null;
+            String imageUser = null;
             int yearDate;
             int monthDate;
             int dayDate;
@@ -29,6 +30,7 @@ public class userinfoCommand extends ListenerAdapter {
                 yearDate = event.getUser().getTimeCreated().getYear();
                 monthDate = event.getUser().getTimeCreated().getMonthValue();
                 dayDate = event.getUser().getTimeCreated().getDayOfMonth();
+                imageUser = event.getUser().getAvatarUrl();
 
             } else {
                 user = optionMapping.getAsUser().getName();
@@ -37,12 +39,14 @@ public class userinfoCommand extends ListenerAdapter {
                 yearDate = optionMapping.getAsUser().getTimeCreated().getYear();
                 monthDate = optionMapping.getAsUser().getTimeCreated().getMonthValue();
                 dayDate = optionMapping.getAsUser().getTimeCreated().getDayOfMonth();
+                imageUser = optionMapping.getAsUser().getAvatarUrl();
             }
 
             eb.setTitle(user);
             eb.addField("<:dce_user:1000814869248999536> **Discord tag**", "`" + userTag + "`", true);
             eb.addField("<:id:1000814889549443083> **Discord ID**", "`" + userID + "`", true);
             eb.addField("<:oskas:875739803189129236> **Account created in: **", "`" + yearDate + "/" + monthDate + "/" + dayDate + "`", true);
+            eb.setThumbnail(imageUser);
 
             event.replyEmbeds(eb.build()).queue();
         }

@@ -44,7 +44,6 @@ public class botinfoCommand extends ListenerAdapter {
                     "[click here](https://github.com/whoisnicolasadm)!\n\nIf you want to check out my website, click here, and if you want to add me to your server, " +
                     "[click here](https://discord.com/api/oauth2/authorize?client_id=764140529041670154&permissions=8&scope=applications.commands%20bot)!\n");
             eb.addField("<:modbotzin:991131805212221440>**Add me!**", "[Invite me!](https://discord.com/api/oauth2/authorize?client_id=991128428596183160&permissions=8&scope=applications.commands%20bot)", true);
-            eb.addField("<:review:1000814923380707369>**Commands**", "[My commands!](https://joasknuicolas.wixsite.com/modbot/copy-of-faq)", true);
             eb.addField("<:firewall:1000815413267005470>**Support & Help**", "[My support server](https://discord.gg/7XGwzTGDka)", true);
             eb.addField("**<:github:1001671958204792894>Dev's GitHub**", "[GitHub](https://github.com/whoisnicolasadm)", true);
             eb.addField("**<:twitter:1001672138324988025>Dev's Twitter**", "[Twitter](https://twitter.com/SrUnicode)", true);
