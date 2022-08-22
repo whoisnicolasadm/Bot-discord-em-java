@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class connectionFactory {
     public static Connection getConnect() {
         try{
-            final String url = "jdbc:mysql://localhost:3306/modbot_db?verifyServerCertificate=false&useSSL=true";
+            final String url = "jdbc:mysql://localhost:3306/modbot_database?verifyServerCertificate=false&useSSL=true";
             final String user = "root";
             final String password = "NicolasDias123!";
 

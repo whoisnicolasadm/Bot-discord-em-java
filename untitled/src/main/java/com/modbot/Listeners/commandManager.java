@@ -6,6 +6,7 @@ import com.modbot.Commands.bot.botinfoCommand;
 import com.modbot.Commands.bot.pingCommand;
 import com.modbot.Commands.bot.shardsCommand;
 
+import com.modbot.Commands.bot.statsCommand;
 import com.modbot.Commands.discord.*;
 
 import com.modbot.Commands.fun.cancelledCommand;
@@ -84,7 +85,8 @@ public class commandManager extends ListenerAdapter {
                 new triggeredCommand(),
                 new blushCommand(),
                 new slapCommand(),
-                new channelInfoCommand()
+                new channelInfoCommand(),
+                new statsCommand()
         );
 
 
@@ -113,7 +115,8 @@ public class commandManager extends ListenerAdapter {
         commandData.add(Commands.slash("botinfo", "ΓUtility⅃ ModBot info"));
         commandData.add(Commands.slash("source", "ΓUtility⅃ View ModBot source code on GitHub"));
         commandData.add(Commands.slash("anagram", "ΓUtility⅃ Get name or word anagram").addOptions(optionName));
-        //commandData.add(Commands.slash("feedback", "ΓUtility⅃ Give feedback about the bot to the creator").addOptions(optionFeedback));
+        commandData.add(Commands.slash("feedback", "ΓUtility⅃ Give feedback about the bot to the creator").addOptions(optionFeedback));
+        commandData.add(Commands.slash("apod", "ΓUtility⅃ Astronomic picture of the day"));
 
         //Discord commands
         commandData.add(Commands.slash("serverinfo", "ΓDiscord⅃ server informations"));
@@ -133,6 +136,7 @@ public class commandManager extends ListenerAdapter {
         //bot commands
         commandData.add(Commands.slash("shards", "ΓBot⅃ View all ModBot shards stats"));
         commandData.add(Commands.slash("invite", "ΓBot⅃ Invite ModBot to your server"));
+        commandData.add(Commands.slash("stats", "ΓBot⅃ ModBot stats"));
 
         //Interaction commands
         commandData.add(Commands.slash("bite", "ΓSocial⅃ bite some user").addOptions(optionUser2));

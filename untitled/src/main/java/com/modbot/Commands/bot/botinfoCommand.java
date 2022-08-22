@@ -29,7 +29,7 @@ public class botinfoCommand extends ListenerAdapter {
             final long seconds = duration / 1000L % 60;
             // final long milliseconds = duration % 1000;
 
-            String uptime = (years == 0 ? "" : "**" + years + "y** ") + (months == 0 ? "" : "**" + months + "mm** ") + (days == 0 ? "" : "**" + days + "d** ") + (hours == 0 ? "" : "**" + hours + "** Hours, ")
+            String uptime = (years == 0 ? "" : "**" + years + "y** ") + (months == 0 ? "" : "**" + months + "mm** ") + (days == 0 ? "" : "**" + days + "d** ") + (hours == 0 ? "" : "**" + hours + "** h, ")
                     + (minutes == 0 ? "" : "**" + minutes + "m** ") + (seconds == 0 ? "" : "**" + seconds + "s** ") /* + (milliseconds == 0 ? "" : milliseconds + " Milliseconds, ") */;
 
 

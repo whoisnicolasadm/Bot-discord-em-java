@@ -34,11 +34,6 @@ public class ModBot extends ListenerAdapter {
         builder.setChunkingFilter(ChunkingFilter.ALL);
         builder.enableCache(CacheFlag.ONLINE_STATUS);
 
-        builder.setSessionController(new SessionControllerAdapter() {
-            public Pair<String, Integer> getGatewayBot(JDA api) {
-                return Pair.of(getGateway(), 10);
-            }
-        });
 
         builder.addEventListeners(
                 new MentionListener(),

@@ -13,7 +13,7 @@ public class createDb {
 
         Connection connect = DriverManager.getConnection(url, user, password);
         Statement stmt = connect.createStatement();
-        stmt.execute("CREATE DATABASE IF NOT EXISTS modbot_db");
+        stmt.execute("CREATE DATABASE IF NOT EXISTS modbot_database");
 
         System.out.println("Db criado com sucesso");
 

@@ -17,5 +17,6 @@ public class MentionListener extends ListenerAdapter {
         if(message[0].contentEquals("<@764140529041670154>")){
             event.getChannel().sendMessageEmbeds(eb.build()).queue();
         }
+
     }
 }

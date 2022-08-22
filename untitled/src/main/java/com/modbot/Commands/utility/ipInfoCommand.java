@@ -22,7 +22,6 @@ public class ipInfoCommand extends ListenerAdapter {
         var invoke = event.getName();
         if (invoke.equals("ipinfo")) {
 
-
         }
     }
 }

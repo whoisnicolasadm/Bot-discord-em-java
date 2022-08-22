@@ -15,8 +15,9 @@ public class createTables {
                 "lvl INT," +
                 "exp INT" +
                 ")";
+
         Statement stmt = connection.createStatement();
                 stmt.execute(sql);
-                System.out.println("Tabela criada com sucesso");
+                System.out.println("Tabelas criada com sucesso");
     }
 }

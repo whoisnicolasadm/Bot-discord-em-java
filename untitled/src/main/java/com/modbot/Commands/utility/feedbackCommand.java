@@ -18,7 +18,12 @@ public class feedbackCommand extends ListenerAdapter {
             String user = event.getUser().getAsTag();
             String user2 = event.getUser().getAsMention();
             String userId = event.getUser().getId();
-            TextChannel textChannel = event.getJDA().getGuildById("991347975362195596").getTextChannelById("1000805408971178055");
+            String serverFeedbackId = "991347975362195596";
+            String channelFeedbackId = "1011051248239251496";
+
+
+
+            TextChannel feedBackChannel = event.getJDA().getShardManager().getGuildById(serverFeedbackId).getTextChannelById(channelFeedbackId);
             EmbedBuilder eb = new EmbedBuilder();
             EmbedBuilder eb2 = new EmbedBuilder();
             String serverName = event.getGuild().getName();
@@ -30,8 +35,9 @@ public class feedbackCommand extends ListenerAdapter {
             eb.setDescription("```" + feedbackMsg + "```\nServer: " + serverName + " (" + serverId + ")\nUser: " + user + " (" + userId + ")");
             eb.setFooter(user);
 
+
+            feedBackChannel.sendMessageEmbeds(eb.build()).queue();
             event.replyEmbeds(eb2.build()).queue();
-            textChannel.sendMessageEmbeds(eb.build()).queue();
 
         }
     }
