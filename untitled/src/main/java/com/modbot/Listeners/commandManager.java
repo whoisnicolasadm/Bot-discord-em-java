@@ -18,13 +18,8 @@ import com.modbot.Commands.fun.eightballCommand;
 import com.modbot.Commands.fun.jankenponCommand;
 
 import com.modbot.Commands.interaction.*;
-import com.modbot.Commands.staff.deletechannelCommand;
+import com.modbot.Commands.staff.*;
 
-import com.modbot.Commands.staff.lockCommand;
-
-import com.modbot.Commands.staff.renamechannelCommand;
-
-import com.modbot.Commands.staff.unlockCommand;
 import com.modbot.Commands.utility.*;
 import net.dv8tion.jda.api.events.ReadyEvent;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
@@ -91,13 +86,13 @@ public class commandManager extends ListenerAdapter {
 
 
         //options data
-        OptionData optionName2 = new OptionData(OptionType.STRING, "name", "new channel name", true);
-        OptionData optionFeedback = new OptionData(OptionType.STRING, "feedback", "feedback message", true);
-        OptionData optionChannel = new OptionData(OptionType.CHANNEL, "channel", "channel", true);
-        OptionData optionUser = new OptionData(OptionType.USER, "user", "get user", false);
-        OptionData optionUser2 = new OptionData(OptionType.USER, "user", "user", true);
-        OptionData optionName = new OptionData(OptionType.STRING, "word", "get name or word anagram", true);
-        OptionData optionAsk = new OptionData(OptionType.STRING, "doubt", "ask me anything", true);
+        OptionData optionName2 = new OptionData(OptionType.STRING, "name", "value", true);
+        OptionData optionFeedback = new OptionData(OptionType.STRING, "feedback", "value", true);
+        OptionData optionChannel = new OptionData(OptionType.CHANNEL, "channel", "value", true);
+        OptionData optionUser = new OptionData(OptionType.USER, "user", "valuer", false);
+        OptionData optionUser2 = new OptionData(OptionType.USER, "user", "value", true);
+        OptionData optionName = new OptionData(OptionType.STRING, "word", "value", true);
+        OptionData optionAsk = new OptionData(OptionType.STRING, "doubt", "value", true);
         OptionData optionValue = new OptionData(OptionType.STRING, "value", "value", true).addChoice("Rock", "Rock").addChoice("Paper", "Paper").addChoice("Scissors", "Scissors");
 
         //registering commands
