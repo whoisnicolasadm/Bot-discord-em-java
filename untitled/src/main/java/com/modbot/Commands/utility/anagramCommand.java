@@ -13,6 +13,9 @@ import java.util.List;
 public class anagramCommand extends ListenerAdapter {
     @Override
     public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event) {
+
+
+
         var invoke = event.getName();
 
         if (invoke.equals("anagram")) {

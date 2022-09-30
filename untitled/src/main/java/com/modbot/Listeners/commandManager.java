@@ -9,6 +9,7 @@ import com.modbot.Commands.bot.shardsCommand;
 import com.modbot.Commands.bot.statsCommand;
 import com.modbot.Commands.discord.*;
 
+import com.modbot.Commands.economy.daily;
 import com.modbot.Commands.fun.cancelledCommand;
 
 import com.modbot.Commands.fun.coinflipCommand;
@@ -19,11 +20,11 @@ import com.modbot.Commands.fun.jankenponCommand;
 
 import com.modbot.Commands.interaction.*;
 import com.modbot.Commands.staff.*;
-
 import com.modbot.Commands.utility.*;
 import net.dv8tion.jda.api.events.ReadyEvent;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.interactions.commands.Command;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
@@ -128,6 +129,8 @@ public class commandManager extends ListenerAdapter {
         commandData.add(Commands.slash("coinflip", "ΓFun⅃ Let me flip acoin and see if it will land on heads or tails!"));
         commandData.add(Commands.slash("cancelled", "ΓFun⅃ Your best friend was cancelled by Twitter's cancel culture! But... why were they cancelled?").addOptions(optionUser2));
 
+
+
         //bot commands
         commandData.add(Commands.slash("shards", "ΓBot⅃ View all ModBot shards stats"));
         commandData.add(Commands.slash("invite", "ΓBot⅃ Invite ModBot to your server"));
@@ -160,14 +163,19 @@ public class commandManager extends ListenerAdapter {
         List<CommandData> commandData = new ArrayList<>();
         event.getJDA().addEventListener(
                 new shutdownCommand(),
-                new serversListCommand()
+                new serversListCommand(),
+                new daily(),
+                new setLogChannelCommand()
         );
 
         if(event.getGuild().getId().equals("991347975362195596")){
             OptionData shardId = new OptionData(OptionType.STRING, "shardid", "none", true);
-            OptionData shardId2 = new OptionData(OptionType.STRING, "shardid", "none", true);
+            OptionData channel = new OptionData(OptionType.CHANNEL, "channel", "none", true);
+
             commandData.add(Commands.slash("shutdown_shard", "none").addOptions(shardId));
             commandData.add(Commands.slash("server_list", "none"));
+            commandData.add(Commands.slash("daily", "ΓCurrency⅃ Get the daily credits"));
+            commandData.add(Commands.slash("set_logs_channel", "Γstaff⅃ Sets the logs channel").addOptions(channel));
             event.getGuild().updateCommands().addCommands(commandData).queue();
         }
     }
