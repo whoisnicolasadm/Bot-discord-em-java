@@ -32,7 +32,7 @@ public class ModBot extends ListenerAdapter {
     private final ShardManager shardManager;
 
     public ModBot() throws LoginException, SQLException {
-        String token = "NzY0MTQwNTI5MDQxNjcwMTU0.GsMEJ-.o1AKMe9EIlUaGJ1sp6Zlcz8ALFpk43alOxqeJg";
+        String token = "O TOKEN VAI AQUI";
         DefaultShardManagerBuilder builder = DefaultShardManagerBuilder.createDefault(token);
         builder.setActivity(Activity.playing("Live without Fear ~ | Cluster [1]"));
         builder.setStatus(OnlineStatus.ONLINE);
